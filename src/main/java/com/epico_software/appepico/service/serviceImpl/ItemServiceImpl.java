@@ -16,7 +16,6 @@ import org.springframework.stereotype.Service;
 public class ItemServiceImpl implements ItemService {
 
     private final ItemRepository itemRepository;
-
     private final ConversionService conversionService;
 
     public ItemServiceImpl(ItemRepository itemRepository, ConversionService conversionService) {
