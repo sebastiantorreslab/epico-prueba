@@ -15,6 +15,7 @@ import java.math.BigDecimal;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ItemDTO implements Serializable {
 
+    private Long id;
     private  String name;
     private Long category_id;
     private BigDecimal costPrice;

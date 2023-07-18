@@ -10,6 +10,7 @@ public class ItemToItemDTOConverter implements Converter<Item, ItemDTO> {
     @Override
     public ItemDTO convert(Item source) {
         ItemDTO itemDTO = new ItemDTO();
+        itemDTO.setId(source.getId());
         itemDTO.setName(source.getName());
         itemDTO.setCategory_id(source.getCategory().getId());
         itemDTO.setSku(source.getSku());
