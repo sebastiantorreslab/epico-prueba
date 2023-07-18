@@ -46,3 +46,7 @@ Postman
 -Se debe crear categoría primero ya que al momento de crear el producto, se proporciona el id de la categoría donde quedará relacionado.
 -Se decide trabajar con categorias como tabla para brindar mejor funcionamiento para la persistencia de datos, así como la renderización en frontend
 ``` 
+Enlace postman: [Coleccion - Postman](EPICO-SOFTWARE.postman_collection.json)
+
+
+
