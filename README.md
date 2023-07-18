@@ -3,13 +3,13 @@ prueba técnica spring boot - Epico-Software
 
 # 1. Inicializar MySql en docker
 ``` en shell terminal
-docker run --detach --name mysql --env MYSQL_ROOT_PASSWORD=db --volume mysql:/var/lib/mysql --publish 3306:3306 mysql
+docker run --detach --name mysql-container --env MYSQL_ROOT_PASSWORD=root-db --volume mysql:/var/lib/mysql --publish 3306:3306 mysq:latest
 ``` 
 # 2. Conectarse con MySql workbench
 
 ``` 
 user=root
-password=db
+password=root-db
 host=localhost
 port=3306
 ``` 
