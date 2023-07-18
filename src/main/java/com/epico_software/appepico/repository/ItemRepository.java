@@ -12,11 +12,6 @@ import java.util.List;
 @Repository
 public interface ItemRepository extends JpaRepository<Item,Long> {
 
-    @Query("select i from Item i where i.available = ?1")
-    Page<Item> listAvailableItems(Boolean available, Pageable pageable);
-
-    @Query("select i from Item i where i.available = ?1")
-    Page<Item> listNotAvailableItems(Boolean available, Pageable pageable);
 
     @Query("SELECT c.categoryName AS categoryName, COUNT(i.id) AS itemsCount " +
             "FROM Item i JOIN i.category c " +

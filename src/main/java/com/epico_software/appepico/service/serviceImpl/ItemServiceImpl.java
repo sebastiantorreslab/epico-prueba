@@ -6,13 +6,13 @@ import com.epico_software.appepico.entity.Item;
 import com.epico_software.appepico.repository.CategoryRepository;
 import com.epico_software.appepico.repository.ItemRepository;
 import com.epico_software.appepico.service.ItemService;
+
 import org.springframework.core.convert.ConversionService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 
@@ -20,7 +20,6 @@ import java.util.List;
 public class ItemServiceImpl implements ItemService {
 
     private final ItemRepository itemRepository;
-
     private final CategoryRepository categoryRepository;
     private final ConversionService conversionService;
 
@@ -121,8 +120,6 @@ public class ItemServiceImpl implements ItemService {
     public List<Object[]> countItemsByCategory() {
         return itemRepository.countItemsByCategory();
     }
-
-
 
 
 
