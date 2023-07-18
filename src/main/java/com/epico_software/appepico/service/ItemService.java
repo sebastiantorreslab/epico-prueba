@@ -5,6 +5,8 @@ import com.epico_software.appepico.dto.ItemDTOFind;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 
+import java.util.List;
+
 
 public interface ItemService {
 
@@ -14,6 +16,8 @@ public interface ItemService {
     ResponseEntity<?> updateItem(ItemDTOFind ItemDTOFind);
     ResponseEntity<?> deleteItem(Long id);
     ResponseEntity<?> logicDeleteItem(Long id);
+
+    List<Object[]> countItemsByCategory();
 
 
 

@@ -13,6 +13,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 
 @Service
 public class ItemServiceImpl implements ItemService {
@@ -114,5 +116,14 @@ public class ItemServiceImpl implements ItemService {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
     }
+
+    @Override
+    public List<Object[]> countItemsByCategory() {
+        return itemRepository.countItemsByCategory();
+    }
+
+
+
+
 
 }

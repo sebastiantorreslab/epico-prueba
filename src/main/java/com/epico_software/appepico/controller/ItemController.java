@@ -7,6 +7,8 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/item")
 public class ItemController {
@@ -49,6 +51,20 @@ public class ItemController {
         return itemService.deleteItem(id);
     }
 
+    @GetMapping("/count")
+    public List<Object[]> countItemsByCategoria() {
+        List<Object[]> resultados = itemService.countItemsByCategory();
 
+        for (Object[] resultado : resultados) {
+            String category = (String) resultado[0];
+            Long itemsCount = (Long) resultado[1];
+            System.out.println("Category: " + category + ", ItemsCount: " + itemsCount);
+        }
 
+        return resultados;
+    }
 }
+
+
+
+
