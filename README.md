@@ -8,7 +8,7 @@ docker run --detach --name mysql --env MYSQL_ROOT_PASSWORD=db --volume mysql:/va
 # 2. Conectarse con MySql workbench
 
 ``` 
-user=user
+user=root
 password=db
 host=localhost
 port=3306
