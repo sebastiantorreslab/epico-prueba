@@ -13,7 +13,6 @@ public class ItemDTOFindToItemConverter implements Converter<ItemDTOFind,Item> {
     public Item convert(ItemDTOFind source) {
         Item item = new Item();
         item.setName(source.getName());
-        item.setCategory(source.getCategory());;
         item.setSku(source.getSku());
         item.setPicFilename(source.getPicFilename());
         item.setCostPrice(source.getCostPrice());

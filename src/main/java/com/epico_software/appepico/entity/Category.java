@@ -1,5 +1,6 @@
 package com.epico_software.appepico.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
@@ -35,12 +36,12 @@ public class Category {
 
     @URL
     @Column(name = "category_pic", nullable = false)
-    @Size(message = "Max 45", max = 45)
+    @Size(message = "Max 255", max = 255)
     @JdbcTypeCode(SqlTypes.VARCHAR)
     private String categoryPic;
 
-    @OneToMany(mappedBy = "category",cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name="item_id", referencedColumnName = "id")
+    @JsonIgnore
+    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
     private List<Item> items;
 
 }

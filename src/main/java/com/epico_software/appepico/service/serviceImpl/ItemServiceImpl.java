@@ -1,7 +1,9 @@
 package com.epico_software.appepico.service.serviceImpl;
 import com.epico_software.appepico.dto.ItemDTO;
 import com.epico_software.appepico.dto.ItemDTOFind;
+import com.epico_software.appepico.entity.Category;
 import com.epico_software.appepico.entity.Item;
+import com.epico_software.appepico.repository.CategoryRepository;
 import com.epico_software.appepico.repository.ItemRepository;
 import com.epico_software.appepico.service.ItemService;
 import org.springframework.core.convert.ConversionService;
@@ -16,10 +18,13 @@ import org.springframework.stereotype.Service;
 public class ItemServiceImpl implements ItemService {
 
     private final ItemRepository itemRepository;
+
+    private final CategoryRepository categoryRepository;
     private final ConversionService conversionService;
 
-    public ItemServiceImpl(ItemRepository itemRepository, ConversionService conversionService) {
+    public ItemServiceImpl(ItemRepository itemRepository, CategoryRepository categoryRepository, ConversionService conversionService) {
         this.itemRepository = itemRepository;
+        this.categoryRepository = categoryRepository;
         this.conversionService = conversionService;
     }
 
@@ -39,6 +44,8 @@ public class ItemServiceImpl implements ItemService {
     public ResponseEntity<?> saveItem(ItemDTO itemDTO) {
         if(itemDTO != null){
             Item item = conversionService.convert(itemDTO,Item.class);
+            Category category = categoryRepository.findById(itemDTO.getCategory_id()).orElse(null);
+            item.setCategory(category);
             itemRepository.save(item);
             return new ResponseEntity<>("200",HttpStatus.OK);
         }else {
@@ -63,14 +70,15 @@ public class ItemServiceImpl implements ItemService {
     @Override
     public ResponseEntity<?> updateItem(ItemDTOFind itemDTOFind) {
             Item item = itemRepository.findById(itemDTOFind.getId()).orElse(null);
+                Category category = categoryRepository.findById(itemDTOFind.getCategory_id()).orElse(null);
             if(item.getId()!= null){
                 item.setName(itemDTOFind.getName());
-                item.setCategory(itemDTOFind.getCategory());
                 item.setSku(itemDTOFind.getSku());
                 item.setPicFilename(itemDTOFind.getPicFilename());
                 item.setCostPrice(itemDTOFind.getCostPrice());
                 item.setUnitPrice(itemDTOFind.getUnitPrice());
                 item.setAvailable(itemDTOFind.getAvailable());
+                item.setCategory(category);
                 itemRepository.save(item);
                 ItemDTO itemDTO = conversionService.convert(item,ItemDTO.class);
                 return new ResponseEntity<>(itemDTO,HttpStatus.ACCEPTED);

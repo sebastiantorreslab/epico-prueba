@@ -1,5 +1,6 @@
 package com.epico_software.appepico.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Digits;
 import jakarta.validation.constraints.Positive;
@@ -30,12 +31,12 @@ public class Item {
     @JdbcTypeCode(SqlTypes.VARCHAR)
     private String name;
 
-    @Size(message = "Max 255", max = 255)
-    @ManyToOne()
-    @JoinColumn(name = "category_id",foreignKey = @ForeignKey(name="FK_CATEGORY_ID"))
+    @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @JsonIgnore
+    @JoinColumn(name = "category_id", referencedColumnName = "id", foreignKey = @ForeignKey(name="FK_CATEGORY_ID"))
     private Category category;
 
-    @Column(name = "sku_code", nullable = false, length = 45)
+    @Column(name = "sku_code", nullable = false,unique = true ,length = 45)
     @JdbcTypeCode(SqlTypes.VARCHAR)
     private String sku;
 
