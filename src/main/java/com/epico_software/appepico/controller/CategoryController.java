@@ -29,7 +29,7 @@ public class CategoryController {
         return categoryService.saveCategory(categoryDTO);
     }
 
-    @PutMapping("/update")
+    @PatchMapping("/update")
     public ResponseEntity<?> updateCategory(@RequestBody CategoryItemDTO categoryItemDTO){
         return categoryService.updateCategory(categoryItemDTO);
     }

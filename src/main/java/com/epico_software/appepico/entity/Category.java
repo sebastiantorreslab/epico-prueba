@@ -40,7 +40,7 @@ public class Category {
     @JdbcTypeCode(SqlTypes.VARCHAR)
     private String categoryPic;
 
-    @JsonIgnore
+
     @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
     private List<Item> items;
 

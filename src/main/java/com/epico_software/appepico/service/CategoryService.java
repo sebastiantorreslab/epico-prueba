@@ -1,9 +1,6 @@
 package com.epico_software.appepico.service;
 import com.epico_software.appepico.dto.CategoryDTO;
 import com.epico_software.appepico.dto.CategoryItemDTO;
-import com.epico_software.appepico.dto.ItemDTO;
-import com.epico_software.appepico.dto.ItemDTOFind;
-import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 
 public interface CategoryService {

@@ -1,5 +1,4 @@
 package com.epico_software.appepico.entity;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Digits;
@@ -33,7 +32,7 @@ public class Item {
 
     @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     @JsonIgnore
-    @JoinColumn(name = "category_id", referencedColumnName = "id", foreignKey = @ForeignKey(name="FK_CATEGORY_ID"))
+    @JoinColumn(name = "category_id", referencedColumnName = "id")
     private Category category;
 
     @Column(name = "sku_code", nullable = false,unique = true ,length = 45)

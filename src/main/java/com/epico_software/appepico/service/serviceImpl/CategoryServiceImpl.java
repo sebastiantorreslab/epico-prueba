@@ -5,12 +5,12 @@ import com.epico_software.appepico.dto.CategoryItemDTO;
 import com.epico_software.appepico.entity.Category;
 import com.epico_software.appepico.repository.CategoryRepository;
 import com.epico_software.appepico.service.CategoryService;
-
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.ConversionService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,13 +18,17 @@ import java.util.List;
 @Service
 public class CategoryServiceImpl implements CategoryService {
 
+
+
     private final CategoryRepository categoryRepository;
     private final ConversionService conversionService;
 
+    @Autowired
     public CategoryServiceImpl(CategoryRepository categoryRepository, ConversionService conversionService) {
         this.categoryRepository = categoryRepository;
         this.conversionService = conversionService;
     }
+
 
     @Override
     public ResponseEntity<?> getCategories() {

@@ -2,6 +2,7 @@ package com.epico_software.appepico.dto;
 
 
 import com.epico_software.appepico.entity.Item;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -14,6 +15,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class CategoryItemDTO implements Serializable {
 
     private Long id;
@@ -21,4 +23,11 @@ public class CategoryItemDTO implements Serializable {
     private String categoryDescription;
     private String categoryPic;
     private List<Item> items;
+
+    public CategoryItemDTO(String categoryName, String categoryDescription, String categoryPic, List<Item> items) {
+        this.categoryName = categoryName;
+        this.categoryDescription = categoryDescription;
+        this.categoryPic = categoryPic;
+        this.items = items;
+    }
 }

@@ -16,6 +16,8 @@ public interface ItemService {
     ResponseEntity<?> updateItem(ItemDTOFind ItemDTOFind);
     ResponseEntity<?> deleteItem(Long id);
     ResponseEntity<?> logicDeleteItem(Long id);
+
     List<Object[]> countItemsByCategory();
+
 
 }

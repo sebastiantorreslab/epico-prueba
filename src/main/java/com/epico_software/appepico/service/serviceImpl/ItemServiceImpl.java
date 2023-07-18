@@ -6,13 +6,14 @@ import com.epico_software.appepico.entity.Item;
 import com.epico_software.appepico.repository.CategoryRepository;
 import com.epico_software.appepico.repository.ItemRepository;
 import com.epico_software.appepico.service.ItemService;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.ConversionService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
 
 
@@ -23,6 +24,8 @@ public class ItemServiceImpl implements ItemService {
     private final CategoryRepository categoryRepository;
     private final ConversionService conversionService;
 
+
+    @Autowired
     public ItemServiceImpl(ItemRepository itemRepository, CategoryRepository categoryRepository, ConversionService conversionService) {
         this.itemRepository = itemRepository;
         this.categoryRepository = categoryRepository;
@@ -63,7 +66,7 @@ public class ItemServiceImpl implements ItemService {
             ItemDTO itemDTO = conversionService.convert(item,ItemDTO.class);
             return new ResponseEntity<>(itemDTO,HttpStatus.FOUND);
         }else {
-            throw new RuntimeException();
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
 
     }

@@ -1,6 +1,7 @@
 package com.epico_software.appepico.dto;
 
 import com.epico_software.appepico.entity.Category;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.*;
 
 import java.io.Serializable;
@@ -11,6 +12,7 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class ItemDTO implements Serializable {
 
     private  String name;

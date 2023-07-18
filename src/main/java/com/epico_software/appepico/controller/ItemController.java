@@ -40,7 +40,6 @@ public class ItemController {
     public ResponseEntity<?> updateItem(@RequestBody ItemDTOFind itemDTOFind){
         return itemService.updateItem(itemDTOFind);
     }
-
     @PatchMapping("/setStatus/{id}")
     public ResponseEntity<?>  logicDeleteItem(@PathVariable("id") Long id){
         return itemService.logicDeleteItem(id);
@@ -63,6 +62,9 @@ public class ItemController {
 
         return resultados;
     }
+
+
+
 
 }
 
