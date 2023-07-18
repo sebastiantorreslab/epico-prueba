@@ -36,7 +36,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\":\"cocacola\",\r\n    \"category_id\": 1,\r\n    \"costPrice\": 2500,\r\n    \"unitPrice\": 7000,\r\n    \"picFilename\":\"https://lavaquita.co/cdn/shop/products/supermercados_la_vaquita_supervaquita_gaseosa_coca_cola_10_oz_bebidas_liquidas_700x700.jpg?v=1620489361\",\r\n    \"sku\":\"sd-5647\",\r\n    \"available\": true\r\n    \r\n}",
+							"raw": "{\r\n    \"name\":\"onion\",\r\n    \"category_id\": 2,\r\n    \"costPrice\": 2500,\r\n    \"unitPrice\": 5000,\r\n    \"picFilename\":\"https://assets.bonappetit.com/photos/62aba9d5b433b325383e9ca9/3:2/w_4950,h_3300,c_limit/0616-lemonade-recipe-lede.jpg\",\r\n    \"sku\":\"sd-5691\",\r\n    \"available\": true\r\n    \r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -64,7 +64,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/item/get/3",
+							"raw": "http://localhost:8080/item/get/4",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -73,7 +73,7 @@
 							"path": [
 								"item",
 								"get",
-								"3"
+								"4"
 							]
 						}
 					},
@@ -86,7 +86,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\":3,\r\n    \"name\":\"ginger-drink\",\r\n    \"category_id\": 2,\r\n    \"costPrice\": 2500,\r\n    \"unitPrice\": 7000,\r\n    \"picFilename\":\"https://exitocol.vtexassets.com/arquivos/ids/19210601/Soda-300-ml-59235_a.jpg?v=638249727522500000\",\r\n    \"sku\":\"sd-5644\",\r\n    \"available\": true\r\n    \r\n}",
+							"raw": "{\r\n    \"id\":4,\r\n    \"name\":\"ginger-drink\",\r\n    \"category_id\": 1,\r\n    \"costPrice\": 2500,\r\n    \"unitPrice\": 7000,\r\n    \"picFilename\":\"https://exitocol.vtexassets.com/arquivos/ids/19210601/Soda-300-ml-59235_a.jpg?v=638249727522500000\",\r\n    \"sku\":\"sd-5649\",\r\n    \"available\": true\r\n    \r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -123,7 +123,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/item/setStatus/3",
+							"raw": "http://localhost:8080/item/setStatus/2",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -132,7 +132,7 @@
 							"path": [
 								"item",
 								"setStatus",
-								"3"
+								"2"
 							]
 						}
 					},
@@ -158,6 +158,26 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "getItemsCountByCategory",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/item/count",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"item",
+								"count"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -171,7 +191,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\"categoryName\":\"CANDY\",\r\n\"categoryDescription\":\"candy-snacks\",\r\n\"categoryPic\":\"https://img.freepik.com/vector-gratis/coleccion-snacks_23-2147914464.jpg?w=2000\",\r\n\"items\":[]\r\n}",
+							"raw": "{\r\n\"categoryName\":\"fresh-fruits\",\r\n\"categoryDescription\":\"fresh-drinks\",\r\n\"categoryPic\":\"https://img.freepik.com/vector-gratis/coleccion-snacks_23-2147914464.jpg?w=2000\",\r\n\"items\":[]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -237,11 +257,11 @@
 				{
 					"name": "updateCategory",
 					"request": {
-						"method": "PUT",
+						"method": "PATCH",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\"id\":3,\r\n\"categoryName\":\"Candy-house\",\r\n\"categoryDescription\":\"candy-snacks\",\r\n\"categoryPic\":\"https://img.freepik.com/vector-gratis/coleccion-snacks_23-2147914464.jpg?w=2000\",\r\n\"items\":[]\r\n}",
+							"raw": "{\r\n\"id\":1,\r\n\"categoryName\":\"drink-house\",\r\n\"categoryDescription\":\"candy-snacks\",\r\n\"categoryPic\":\"https://img.freepik.com/vector-gratis/coleccion-snacks_23-2147914464.jpg?w=2000\",\r\n\"items\":[]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
