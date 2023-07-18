@@ -1,5 +1,6 @@
 package com.epico_software.appepico.dto;
 
+import com.epico_software.appepico.entity.Category;
 import lombok.*;
 
 import java.io.Serializable;
@@ -12,8 +13,8 @@ import java.math.BigDecimal;
 @Builder
 public class ItemDTO implements Serializable {
 
-    private String name;
-    private String category;
+    private  String name;
+    private Long category_id;
     private BigDecimal costPrice;
     private BigDecimal unitPrice;
     private String picFilename;

@@ -9,6 +9,8 @@ import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.type.SqlTypes;
 import org.hibernate.validator.constraints.URL;
 
+import java.util.List;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -23,16 +25,9 @@ public class Category {
     @Column(name = "id")
     private Long id;
 
-
-    @Pattern(message = "Only Letters", regexp = "[a-zA-Z À-ú \\\\u00F1\\\\u00D1]+")
-    @Size(message = "Max 45", max = 45)
-    @NotBlank
-    @ToString.Exclude
-    @Basic(fetch = FetchType.LAZY)
     @Column(name = "category_name", nullable = false, unique = true, length = 45)
     private String categoryName;
 
-    @Pattern(message = "Only Letters", regexp = "[a-zA-Z À-ú \\\\u00F1\\\\u00D1]+")
     @Size(message = "Max 255", max = 255)
     @Column(name = "category_description", nullable = false)
     @JdbcTypeCode(SqlTypes.VARCHAR)
@@ -44,7 +39,8 @@ public class Category {
     @JdbcTypeCode(SqlTypes.VARCHAR)
     private String categoryPic;
 
-
-
+    @OneToMany(mappedBy = "category",cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name="item_id", referencedColumnName = "id")
+    private List<Item> items;
 
 }

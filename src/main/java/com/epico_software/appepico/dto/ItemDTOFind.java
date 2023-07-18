@@ -1,5 +1,6 @@
 package com.epico_software.appepico.dto;
 
+import com.epico_software.appepico.entity.Category;
 import com.epico_software.appepico.entity.Item;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -16,7 +17,7 @@ public class ItemDTOFind {
 
     private Long id;
     private String name;
-    private String category;
+    private Category category;
     private BigDecimal costPrice;
     private BigDecimal unitPrice;
     private String picFilename;

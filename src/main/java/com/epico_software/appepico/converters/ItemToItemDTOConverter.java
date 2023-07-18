@@ -11,8 +11,8 @@ public class ItemToItemDTOConverter implements Converter<Item, ItemDTO> {
     public ItemDTO convert(Item source) {
         ItemDTO itemDTO = new ItemDTO();
         itemDTO.setName(source.getName());
-        itemDTO.setCategory(source.getCategory());
-        itemDTO.setSku(source.getSKU());
+        itemDTO.setCategory_id(source.getCategory().getId());
+        itemDTO.setSku(source.getSku());
         itemDTO.setPicFilename(source.getPicFilename());
         itemDTO.setCostPrice(source.getCostPrice());
         itemDTO.setUnitPrice(source.getUnitPrice());

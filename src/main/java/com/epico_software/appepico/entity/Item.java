@@ -31,15 +31,13 @@ public class Item {
     private String name;
 
     @Size(message = "Max 255", max = 255)
-    @Column(name = "category", nullable = false)
-    @JdbcTypeCode(SqlTypes.VARCHAR)
-    private String category;
-
+    @ManyToOne()
+    @JoinColumn(name = "category_id",foreignKey = @ForeignKey(name="FK_CATEGORY_ID"))
+    private Category category;
 
     @Column(name = "sku_code", nullable = false, length = 45)
     @JdbcTypeCode(SqlTypes.VARCHAR)
-    private String SKU;
-
+    private String sku;
 
     @Positive(message = "Only positive numbers")
     @JdbcTypeCode(SqlTypes.DECIMAL)

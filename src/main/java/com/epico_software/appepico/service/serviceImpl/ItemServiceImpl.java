@@ -66,7 +66,7 @@ public class ItemServiceImpl implements ItemService {
             if(item.getId()!= null){
                 item.setName(itemDTOFind.getName());
                 item.setCategory(itemDTOFind.getCategory());
-                item.setSKU(itemDTOFind.getSku());
+                item.setSku(itemDTOFind.getSku());
                 item.setPicFilename(itemDTOFind.getPicFilename());
                 item.setCostPrice(itemDTOFind.getCostPrice());
                 item.setUnitPrice(itemDTOFind.getUnitPrice());
