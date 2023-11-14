@@ -3,7 +3,7 @@ prueba técnica spring boot - Gestión inventarios
 
 # 1. Inicializar MySql en docker
 ``` en shell terminal
-docker run --detach --name mysql-container --env MYSQL_ROOT_PASSWORD=root-db --volume mysql:/var/lib/mysql --publish 3306:3306 mysq:latest
+docker run --detach --name mysql-container --env MYSQL_ROOT_PASSWORD=root-db --volume mysql:/var/lib/mysql --publish 3390:3306 mysq:latest
 ``` 
 # 2. Conectarse con MySql workbench
 
