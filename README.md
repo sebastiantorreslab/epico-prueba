@@ -1,5 +1,5 @@
-# epico-prueba
-prueba técnica spring boot - Epico-Software
+# Gestión inventarios
+prueba técnica spring boot - Gestión inventarios
 
 # 1. Inicializar MySql en docker
 ``` en shell terminal
